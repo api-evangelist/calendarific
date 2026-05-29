@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-structure.org/draft/v0/schema",
+  "name": "CalendarificLanguage",
+  "type": "object",
+  "description": "JSON Structure definition of a Calendarific Language resource.",
+  "properties": {
+    "name": { "type": "string" },
+    "iso-639": { "type": "string" }
+  }
+}

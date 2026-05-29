@@ -1,0 +1,54 @@
+extends:
+  - spectral:oas
+documentationUrl: https://calendarific.com/api-documentation
+rules:
+  calendarific-operation-id-camel-case:
+    description: All operationId values should use camelCase.
+    message: "{{property}} should be camelCase"
+    severity: warn
+    given: "$.paths[*][get,post,put,delete,patch].operationId"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[a-z][a-zA-Z0-9]*$"
+  calendarific-operation-summary-title-case:
+    description: Operation summaries should use Title Case.
+    message: "{{property}}: {{value}} should be Title Case"
+    severity: warn
+    given: "$.paths[*][get,post,put,delete,patch].summary"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^([A-Z][a-zA-Z0-9]*)(\\s[A-Z][a-zA-Z0-9]*)*$"
+  calendarific-api-key-required:
+    description: All operations must require an api_key query parameter (Calendarific auth model).
+    message: "Operation must require api_key query parameter"
+    severity: error
+    given: "$.paths[*][get]"
+    then:
+      field: parameters
+      function: truthy
+  calendarific-tag-defined:
+    description: Every operation must have at least one tag (Holidays, Countries, Languages).
+    message: "Operation must declare a tag"
+    severity: error
+    given: "$.paths[*][get,post,put,delete,patch]"
+    then:
+      field: tags
+      function: truthy
+  calendarific-response-envelope:
+    description: 200 responses should reference a schema (response envelope with meta + response).
+    message: "200 response should have a referenced schema"
+    severity: warn
+    given: "$.paths[*][get].responses['200'].content['application/json']"
+    then:
+      field: schema
+      function: truthy
+  calendarific-rate-limit-documented:
+    description: Operations should document 429 rate-limit responses.
+    message: "Operation should document 429 response"
+    severity: warn
+    given: "$.paths[*][get].responses"
+    then:
+      field: "429"
+      function: truthy

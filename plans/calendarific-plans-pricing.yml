@@ -1,0 +1,94 @@
+apiCommonsPlans: "0.1"
+name: Calendarific Plans and Pricing
+provider: Calendarific
+url: https://calendarific.com/pricing
+modified: "2026-05-29"
+currency: USD
+billingModels:
+  - quota
+plans:
+  - id: free
+    name: Free
+    description: Entry plan for evaluation and low-volume usage.
+    price:
+      monthly: 0
+      annual: 0
+    quota:
+      requestsPerMonth: 500
+    features:
+      - Single language
+      - Limited historical and upcoming data
+      - Quarterly data updates
+      - CSV/XLS export
+      - Ecommerce-ready
+      - Multiple API keys
+    support: Community
+    sla: true
+    commercialTerms:
+      attributionRequired: true
+  - id: starter
+    name: Starter
+    description: Entry-level paid plan for small applications.
+    price:
+      monthly: 12
+      annual: 100
+      annualSavings: 44
+    quota:
+      requestsPerMonth: 10000
+    features:
+      - National languages
+      - Complete historical and upcoming data
+      - Quarterly data updates
+      - Premium API parameters (language, uuid)
+      - CSV/XLS export
+      - Ecommerce-ready
+      - Multiple API keys
+    support: Email
+    sla: true
+    commercialTerms:
+      attributionRequired: false
+  - id: business
+    name: Business
+    description: Mid-tier plan for production workloads.
+    price:
+      annual: 500
+      annualSavings: 40
+      monthly: null
+    quota:
+      requestsPerMonth: 50000
+    features:
+      - All supported languages
+      - Complete historical and upcoming data
+      - Weekly data updates
+      - Premium API parameters
+      - CSV/XLS export
+      - Ecommerce-ready
+      - Multiple API keys
+    support: Priority
+    sla: true
+    commercialTerms:
+      attributionRequired: false
+  - id: enterprise
+    name: Enterprise
+    description: High-volume plan with dedicated technical support.
+    price:
+      annual: 4000
+      annualSavings: 800
+      monthly: null
+    quota:
+      requestsPerMonth: 50000000
+    features:
+      - All supported languages
+      - Complete data access
+      - Daily data updates
+      - Full API parameters
+      - CSV/XLS export
+      - Ecommerce-ready
+      - Multiple API keys
+    support: Dedicated
+    sla: true
+    commercialTerms:
+      attributionRequired: false
+      customPricing: true
+      invoicing: true
+      dedicatedAccountManagement: true

@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://calendarific.com/schemas/holiday.json",
+  "title": "Holiday",
+  "description": "A single holiday entry returned by the Calendarific /holidays endpoint.",
+  "type": "object",
+  "required": ["name", "date"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Human-readable holiday name."
+    },
+    "description": {
+      "type": "string",
+      "description": "Short prose description of the holiday."
+    },
+    "country": {
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "description": "Lowercase ISO-3166 alpha-2 country code." },
+        "name": { "type": "string", "description": "Country name." }
+      }
+    },
+    "date": {
+      "type": "object",
+      "required": ["iso"],
+      "properties": {
+        "iso": { "type": "string", "format": "date", "description": "ISO 8601 date." },
+        "datetime": {
+          "type": "object",
+          "properties": {
+            "year": { "type": "integer" },
+            "month": { "type": "integer", "minimum": 1, "maximum": 12 },
+            "day": { "type": "integer", "minimum": 1, "maximum": 31 }
+          }
+        }
+      }
+    },
+    "type": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Classification categories such as 'National holiday', 'Religious', 'Observance', 'Local'."
+    },
+    "primary_type": {
+      "type": "string",
+      "description": "Primary classification of the holiday."
+    },
+    "canonical_url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "urlid": {
+      "type": "string"
+    },
+    "locations": {
+      "type": "string",
+      "description": "Either 'All' or a comma-separated list of region codes where the holiday applies."
+    },
+    "states": {
+      "description": "Either 'All' or an array of state objects.",
+      "oneOf": [
+        { "type": "string" },
+        { "type": "array", "items": { "type": "object" } }
+      ]
+    },
+    "uuid": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier for the holiday (premium parameter)."
+    }
+  }
+}

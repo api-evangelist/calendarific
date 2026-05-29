@@ -1,0 +1,25 @@
+name: global-coverage-catalog
+title: Global Coverage Catalog
+description: |
+  Build a catalog of supported countries and languages from Calendarific
+  to drive UI selectors, dropdowns, and onboarding flows in apps that need
+  to localize holiday data.
+version: "0.1.0"
+uses:
+  - calendarific-holidays
+steps:
+  - id: list-countries
+    capability: calendarific-holidays
+    operation: listCountries
+    description: Retrieve all 230+ countries supported.
+  - id: list-languages
+    capability: calendarific-holidays
+    operation: listLanguages
+    description: Retrieve the set of localization languages.
+  - id: join-coverage
+    description: Cross-reference countries with their supported_languages count.
+outputs:
+  - name: countries
+    description: Array of countries with ISO codes and holiday counts.
+  - name: languages
+    description: Array of supported languages with ISO-639 codes.

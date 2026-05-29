@@ -1,0 +1,52 @@
+name: Calendarific Vocabulary
+description: Controlled vocabulary for the Calendarific Holidays API surface.
+url: https://calendarific.com/api-documentation
+modified: "2026-05-29"
+domain:
+  - name: Calendar
+    description: Calendar systems, holidays, observances, and time-based events.
+  - name: Holiday
+    description: Public holidays, religious observances, and local commemorations worldwide.
+  - name: Localization
+    description: Country-specific and language-specific holiday data.
+concepts:
+  - name: Holiday
+    description: A day of national, local, religious, or observance significance in a given country.
+  - name: NationalHoliday
+    description: A holiday observed countrywide, often with statutory closure.
+  - name: LocalHoliday
+    description: A holiday observed in a specific state, region, or municipality only.
+  - name: ReligiousHoliday
+    description: A holiday tied to a religious calendar (Christian, Islamic, Hindu, Jewish, etc.).
+  - name: Observance
+    description: A culturally significant date that does not necessarily warrant a public closure.
+  - name: Country
+    description: A nation identified by an ISO-3166 alpha-2 code.
+  - name: Language
+    description: A spoken language identified by an ISO-639 two-letter code.
+  - name: Location
+    description: A sub-national region, often expressed as an ISO-3166-2 subdivision code.
+operations:
+  - name: ListHolidays
+    description: Retrieve holidays for a country and year, with optional month/day/type/language filters.
+  - name: ListCountries
+    description: Retrieve the catalog of countries supported by Calendarific.
+  - name: ListLanguages
+    description: Retrieve the catalog of languages supported by Calendarific.
+capabilities:
+  - name: HolidayLookup
+    description: Look up holidays by country and date range for scheduling and operational planning.
+  - name: HolidayCalendarSync
+    description: Synchronize a localized holiday calendar into a downstream system.
+  - name: GlobalCoverageCatalog
+    description: Enumerate supported countries and languages to drive UI selection.
+tags:
+  - Calendar
+  - Holidays
+  - Public Holidays
+  - Worldwide
+  - Localization
+  - Scheduling
+  - HR
+  - Ecommerce
+  - Travel

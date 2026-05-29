@@ -1,0 +1,32 @@
+name: holiday-calendar-sync
+title: Holiday Calendar Sync
+description: |
+  Workflow capability for synchronizing a country-specific holiday calendar into
+  a downstream system (HR, scheduling, ecommerce, travel) for a given year.
+version: "0.1.0"
+uses:
+  - calendarific-holidays
+steps:
+  - id: enumerate-countries
+    capability: calendarific-holidays
+    operation: listCountries
+    description: Fetch supported countries to validate the requested country code.
+  - id: enumerate-languages
+    capability: calendarific-holidays
+    operation: listLanguages
+    description: Fetch supported languages to drive localization.
+  - id: fetch-holidays
+    capability: calendarific-holidays
+    operation: listHolidays
+    description: Retrieve all holidays for the target country and year.
+    inputs:
+      country: "${input.country}"
+      year: "${input.year}"
+      type: "${input.type | default: 'national'}"
+  - id: project-into-calendar
+    description: Map each holiday into the downstream calendar event format.
+outputs:
+  - name: holidayCount
+    description: Number of holidays imported.
+  - name: source
+    description: Calendarific Holiday API v2.

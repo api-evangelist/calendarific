@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-structure.org/draft/v0/schema",
+  "name": "CalendarificCountry",
+  "type": "object",
+  "description": "JSON Structure definition of a Calendarific Country resource.",
+  "properties": {
+    "country_name": { "type": "string" },
+    "iso-3166": { "type": "string" },
+    "total_holidays": { "type": "int32" },
+    "supported_languages": { "type": "int32" },
+    "uuid": { "type": "string", "format": "uuid" }
+  }
+}

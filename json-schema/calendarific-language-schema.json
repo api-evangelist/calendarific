@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://calendarific.com/schemas/language.json",
+  "title": "Language",
+  "description": "A language supported by Calendarific for holiday name and description translation.",
+  "type": "object",
+  "required": ["name", "iso-639"],
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "English name of the language."
+    },
+    "iso-639": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 2,
+      "description": "Two-letter ISO-639 language code."
+    }
+  }
+}

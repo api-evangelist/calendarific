@@ -1,0 +1,16 @@
+{
+  "meta": {
+    "code": 200
+  },
+  "response": {
+    "languages": [
+      { "name": "English", "iso-639": "en" },
+      { "name": "Spanish", "iso-639": "es" },
+      { "name": "French", "iso-639": "fr" },
+      { "name": "German", "iso-639": "de" },
+      { "name": "Chinese", "iso-639": "zh" },
+      { "name": "Hindi", "iso-639": "hi" },
+      { "name": "Arabic", "iso-639": "ar" }
+    ]
+  }
+}

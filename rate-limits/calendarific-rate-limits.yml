@@ -1,0 +1,42 @@
+apiCommonsRateLimits: "0.1"
+name: Calendarific Rate Limits
+provider: Calendarific
+url: https://calendarific.com/api-documentation
+modified: "2026-05-29"
+scope:
+  - per-api-key
+enforcement:
+  exceededResponse:
+    status: 429
+    description: HTTP 429 returned when the monthly request quota or daily soft cap is exceeded.
+defaults:
+  daily:
+    requests: 1000
+    description: Free tier daily soft cap documented as 1,000 requests per day.
+quotas:
+  - plan: free
+    requestsPerMonth: 500
+    requestsPerDay: 1000
+    notes: Monthly cap is the hard ceiling; daily cap documented in API documentation as a fair-use ceiling.
+  - plan: starter
+    requestsPerMonth: 10000
+  - plan: business
+    requestsPerMonth: 50000
+  - plan: enterprise
+    requestsPerMonth: 50000000
+concurrency:
+  documented: false
+  notes: Calendarific does not publish per-second/per-minute concurrency limits; quotas are monthly.
+headers:
+  documented: false
+  notes: API documentation does not specify standard rate-limit response headers (X-RateLimit-*).
+errors:
+  - status: 429
+    code: rate_limit_exceeded
+    description: Monthly request quota exceeded for the API key.
+  - status: 401
+    code: unauthorized
+    description: Missing or invalid api_key parameter.
+  - status: 422
+    code: invalid_parameters
+    description: Malformed or missing required query parameters.

@@ -1,32 +1,175 @@
 aid: calendarific
 name: Calendarific
-description: "Worldwide Holidays"
+description: >-
+  Worldwide public holidays REST API covering 230+ countries. Calendarific
+  provides national, local, religious, and observance holiday data with
+  localization across many ISO-639 languages. Used for ecommerce scheduling,
+  HR systems, travel planning, payroll, and global operations.
 url: https://calendarific.com/
 specificationVersion: '0.20'
 created: '2026-05-28'
-modified: '2026-05-28'
+modified: '2026-05-29'
 x-source: public-apis/public-apis
-x-category: "Calendar"
+x-category: Calendar
 x-tier: 3
 x-tier-reason: bulk-registered-from-public-apis
 tags:
   - Calendar
   - Public APIs
+  - Holidays
+  - Worldwide
+  - Localization
 apis:
-  - name: Calendarific
-    description: "Worldwide Holidays"
-    humanURL: https://calendarific.com/
-    baseURL: https://calendarific.com/
+  - name: Calendarific Holiday API
+    description: >-
+      REST API returning worldwide public holidays for any of 230+ countries
+      and any year through 2049. Supports filtering by month, day, sub-region
+      (ISO-3166-2), holiday type, and language.
+    humanURL: https://calendarific.com/api-documentation
+    baseURL: https://calendarific.com/api/v2
     tags:
       - Calendar
+      - Holidays
+      - Worldwide
     properties:
       - type: Documentation
-        url: https://calendarific.com/
+        url: https://calendarific.com/api-documentation
+      - type: APIReference
+        url: https://calendarific.com/api-documentation
+      - type: OpenAPI
+        url: openapi/calendarific-openapi.yml
+      - type: JSONSchema
+        url: json-schema/calendarific-holiday-schema.json
+      - type: JSONSchema
+        url: json-schema/calendarific-country-schema.json
+      - type: JSONSchema
+        url: json-schema/calendarific-language-schema.json
+      - type: JSONStructure
+        url: json-structure/calendarific-holiday-structure.json
+      - type: JSONStructure
+        url: json-structure/calendarific-country-structure.json
+      - type: JSONStructure
+        url: json-structure/calendarific-language-structure.json
+      - type: JSONLD
+        url: json-ld/calendarific-context.jsonld
+      - type: Example
+        url: examples/calendarific-list-holidays-example.json
+      - type: Example
+        url: examples/calendarific-list-countries-example.json
+      - type: Example
+        url: examples/calendarific-list-languages-example.json
+      - type: Authentication
+        url: https://calendarific.com/api-documentation
+      - type: RateLimits
+        url: rate-limits/calendarific-rate-limits.yml
 common:
   - type: Website
     url: https://calendarific.com/
-  - type: PublicAPIsListing
-    url: https://github.com/public-apis/public-apis
+  - type: DeveloperPortal
+    url: https://calendarific.com/api-documentation
+  - type: SignUp
+    url: https://calendarific.com/signup
+  - type: Login
+    url: https://calendarific.com/login
+  - type: Pricing
+    url: https://calendarific.com/pricing
+  - type: Plans
+    url: plans/calendarific-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/calendarific-rate-limits.yml
+  - type: TermsOfService
+    url: https://calendarific.com/terms
+  - type: PrivacyPolicy
+    url: https://calendarific.com/privacy
+  - type: Support
+    url: https://calendarific.com/contact
+  - type: Contact
+    url: https://calendarific.com/contact
+  - type: GitHubOrganization
+    url: https://github.com/calendarific
+  - type: SDK
+    name: Python SDK
+    url: https://github.com/calendarific/python-calendarific
+  - type: SDK
+    name: Node.js SDK
+    url: https://github.com/calendarific/node-calendarific
+  - type: SDK
+    name: PHP SDK
+    url: https://github.com/calendarific/php-calendarific
+  - type: SDK
+    name: Ruby SDK
+    url: https://github.com/calendarific/ruby-calendarific
+  - type: SDK
+    name: Go SDK
+    url: https://github.com/calendarific/go-calendarific
+  - type: SDK
+    name: .NET SDK (community)
+    url: https://github.com/guibranco/calendarific-sdk-dotnet
+  - type: SDK
+    name: PowerShell wrapper (community)
+    url: https://github.com/rchaganti/PSCalendarific
+  - type: SDK
+    name: Elixir wrapper (community)
+    url: https://github.com/Bounceapp/elixir-calendarific
+  - type: SpectralRules
+    url: rules/calendarific-rules.yml
+  - type: Vocabulary
+    url: vocabulary/calendarific-vocabulary.yml
+  - type: NaftikoCapability
+    url: capabilities/shared/calendarific-holidays.yaml
+  - type: NaftikoCapability
+    url: capabilities/holiday-calendar-sync.yaml
+  - type: NaftikoCapability
+    url: capabilities/global-coverage-catalog.yaml
+  - type: Tools
+    name: Calendarific MCP Server (community)
+    url: https://github.com/noalimoy/calendarific-mcp-server
+  - type: Features
+    data:
+      - name: 230+ Countries
+        description: Coverage of national holidays across more than 230 countries.
+      - name: Multi-Language Localization
+        description: Holiday names and descriptions in many ISO-639 languages (premium).
+      - name: Holiday Type Filtering
+        description: Filter by national, local, religious, or observance categories.
+      - name: Sub-Region Filtering
+        description: Filter by ISO-3166-2 state or region codes.
+      - name: Historical and Future Data
+        description: Holidays from historical years through 2049.
+      - name: CSV and XLS Export
+        description: Download holiday data as flat files in addition to API access.
+      - name: Multiple API Keys
+        description: Multiple keys per account for environment separation.
+  - type: UseCases
+    data:
+      - name: Ecommerce Scheduling
+        description: Plan promotions, shipping cutoffs, and customer service hours around local holidays.
+      - name: HR and Payroll
+        description: Populate localized leave calendars and statutory holiday pay.
+      - name: Travel Planning
+        description: Surface holiday windows that affect bookings, demand, and pricing.
+      - name: Workforce Scheduling
+        description: Plan global team staffing around local public holidays.
+      - name: Calendar Sync
+        description: Hydrate enterprise calendars (Google, Outlook) with localized holidays.
+      - name: Financial Markets
+        description: Identify country-specific trading and settlement closures.
+  - type: Integrations
+    data:
+      - name: Google Calendar
+        description: Imported holiday data into Google Calendar via custom calendars.
+      - name: Microsoft Outlook
+        description: Hydrate Outlook calendars with localized holiday events.
+      - name: Home Assistant
+        description: Community Home Assistant sensor uses Calendarific as a data source.
+      - name: ETL Pipelines
+        description: Community ETL examples using Python, SQLite, and Apache Airflow.
+  - type: Solutions
+    data:
+      - name: Developer API
+        description: REST API for embedding holiday data into apps and services.
+      - name: Data Downloads
+        description: CSV and XLS bulk exports for analytics and offline use.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

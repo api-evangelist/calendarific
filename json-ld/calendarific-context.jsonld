@@ -1,0 +1,32 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "calendarific": "https://calendarific.com/vocab/",
+    "Holiday": "calendarific:Holiday",
+    "Country": "schema:Country",
+    "Language": "schema:Language",
+    "name": "schema:name",
+    "description": "schema:description",
+    "date": {
+      "@id": "schema:startDate",
+      "@type": "schema:Date"
+    },
+    "iso": "calendarific:isoDate",
+    "type": "calendarific:holidayType",
+    "primary_type": "calendarific:primaryType",
+    "canonical_url": {
+      "@id": "schema:url",
+      "@type": "@id"
+    },
+    "urlid": "calendarific:urlId",
+    "country": "schema:countryOfOrigin",
+    "country_name": "schema:name",
+    "iso-3166": "schema:identifier",
+    "iso-639": "schema:alternateName",
+    "locations": "schema:location",
+    "states": "schema:containedInPlace",
+    "total_holidays": "calendarific:totalHolidays",
+    "supported_languages": "calendarific:supportedLanguages",
+    "uuid": "schema:identifier"
+  }
+}

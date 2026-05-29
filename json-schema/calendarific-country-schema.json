@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://calendarific.com/schemas/country.json",
+  "title": "Country",
+  "description": "A country supported by Calendarific.",
+  "type": "object",
+  "required": ["country_name", "iso-3166"],
+  "properties": {
+    "country_name": {
+      "type": "string",
+      "description": "Full country name."
+    },
+    "iso-3166": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 2,
+      "description": "ISO-3166 alpha-2 country code."
+    },
+    "total_holidays": {
+      "type": "integer",
+      "description": "Total number of holidays Calendarific tracks for this country."
+    },
+    "supported_languages": {
+      "type": "integer",
+      "description": "Number of languages in which holiday data is available for this country."
+    },
+    "uuid": {
+      "type": "string",
+      "format": "uuid"
+    }
+  }
+}

@@ -1,0 +1,81 @@
+finopsFramework: FOCUS-aligned
+name: Calendarific FinOps
+provider: Calendarific
+url: https://calendarific.com/pricing
+modified: "2026-05-29"
+billingSurface:
+  pricingModel: subscription
+  meteringUnit: api_request
+  billingFrequency:
+    - monthly
+    - annual
+  currency: USD
+  taxes:
+    documented: false
+  invoicing:
+    available: true
+    tiers:
+      - enterprise
+charges:
+  - id: free-tier
+    plan: free
+    chargeCategory: Usage
+    chargeType: Included
+    unit: requests
+    quantity: 500
+    period: monthly
+    price: 0
+  - id: starter-monthly
+    plan: starter
+    chargeCategory: Subscription
+    chargeType: Recurring
+    period: monthly
+    price: 12
+    includedQuantity: 10000
+    unit: requests
+  - id: starter-annual
+    plan: starter
+    chargeCategory: Subscription
+    chargeType: Recurring
+    period: annual
+    price: 100
+    includedQuantity: 120000
+    unit: requests
+  - id: business-annual
+    plan: business
+    chargeCategory: Subscription
+    chargeType: Recurring
+    period: annual
+    price: 500
+    includedQuantity: 600000
+    unit: requests
+  - id: enterprise-annual
+    plan: enterprise
+    chargeCategory: Subscription
+    chargeType: Recurring
+    period: annual
+    price: 4000
+    includedQuantity: 600000000
+    unit: requests
+overageBehavior:
+  description: When a plan's monthly quota is consumed, additional requests are rejected with HTTP 429 until the next billing period or until the plan is upgraded.
+  hardLimit: true
+  overageBilling: false
+costAllocation:
+  tags:
+    - api_key
+    - plan
+  notes: Customers with multiple API keys per account can allocate cost by key.
+discounts:
+  - id: annual-savings
+    description: Annual billing yields plan-specific savings vs. monthly.
+    appliesTo:
+      - starter
+      - business
+      - enterprise
+focusMapping:
+  ChargeCategory: Usage / Subscription
+  ChargeFrequency: Recurring
+  PricingUnit: requests
+  CommitmentDiscountType: AnnualCommitment
+  BillingAccountId: api_key (proxy)

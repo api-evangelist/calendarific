@@ -1,0 +1,53 @@
+{
+  "meta": {
+    "code": 200
+  },
+  "response": {
+    "holidays": [
+      {
+        "name": "New Year's Day",
+        "description": "New Year's Day is the first day of the year in the Gregorian calendar.",
+        "country": {
+          "id": "us",
+          "name": "United States"
+        },
+        "date": {
+          "iso": "2025-01-01",
+          "datetime": {
+            "year": 2025,
+            "month": 1,
+            "day": 1
+          }
+        },
+        "type": ["National holiday"],
+        "primary_type": "National holiday",
+        "canonical_url": "https://calendarific.com/holiday/us/new-year-day",
+        "urlid": "us/new-year-day",
+        "locations": "All",
+        "states": "All"
+      },
+      {
+        "name": "Christmas Day",
+        "description": "Christmas Day is one of the biggest Christian celebrations and falls on the 25th of December each year.",
+        "country": {
+          "id": "us",
+          "name": "United States"
+        },
+        "date": {
+          "iso": "2025-12-25",
+          "datetime": {
+            "year": 2025,
+            "month": 12,
+            "day": 25
+          }
+        },
+        "type": ["National holiday"],
+        "primary_type": "National holiday",
+        "canonical_url": "https://calendarific.com/holiday/us/christmas-day",
+        "urlid": "us/christmas-day",
+        "locations": "All",
+        "states": "All"
+      }
+    ]
+  }
+}
