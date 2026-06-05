@@ -1,10 +1,9 @@
 aid: calendarific
 name: Calendarific
 description: >-
-  Worldwide public holidays REST API covering 230+ countries. Calendarific
-  provides national, local, religious, and observance holiday data with
-  localization across many ISO-639 languages. Used for ecommerce scheduling,
-  HR systems, travel planning, payroll, and global operations.
+  Worldwide public holidays REST API covering 230+ countries. Calendarific provides national, local, religious, and
+  observance holiday data with localization across many ISO-639 languages. Used for ecommerce scheduling, HR systems,
+  travel planning, payroll, and global operations.
 url: https://calendarific.com/
 specificationVersion: '0.20'
 created: '2026-05-28'
@@ -22,9 +21,8 @@ tags:
 apis:
   - name: Calendarific Holiday API
     description: >-
-      REST API returning worldwide public holidays for any of 230+ countries
-      and any year through 2049. Supports filtering by month, day, sub-region
-      (ISO-3166-2), holiday type, and language.
+      REST API returning worldwide public holidays for any of 230+ countries and any year through 2049. Supports
+      filtering by month, day, sub-region (ISO-3166-2), holiday type, and language.
     humanURL: https://calendarific.com/api-documentation
     baseURL: https://calendarific.com/api/v2
     tags:
@@ -115,12 +113,6 @@ common:
     url: rules/calendarific-rules.yml
   - type: Vocabulary
     url: vocabulary/calendarific-vocabulary.yml
-  - type: NaftikoCapability
-    url: capabilities/shared/calendarific-holidays.yaml
-  - type: NaftikoCapability
-    url: capabilities/holiday-calendar-sync.yaml
-  - type: NaftikoCapability
-    url: capabilities/global-coverage-catalog.yaml
   - type: Tools
     name: Calendarific MCP Server (community)
     url: https://github.com/noalimoy/calendarific-mcp-server

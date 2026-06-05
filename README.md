@@ -1,78 +1,88 @@
 # Calendarific (calendarific)
 
-Worldwide public holidays REST API covering 230+ countries. Calendarific provides
-national, local, religious, and observance holiday data with localization across
-many ISO-639 languages. Used for ecommerce scheduling, HR systems, travel planning,
-payroll, and global operations.
+Worldwide public holidays REST API covering 230+ countries. Calendarific provides national, local, religious, and observance holiday data with localization across many ISO-639 languages. Used for ecommerce scheduling, HR systems, travel planning, payroll, and global operations.
 
-**APIs.yml:** [apis.yml](apis.yml)
+**APIs.json:** [https://calendarific.com/](https://calendarific.com/)
 
-## Type
-- **x-type:** company
-- **x-tier:** 3 (bulk-registered from public-apis)
-- **source:** [public-apis/public-apis](https://github.com/public-apis/public-apis) — category: Calendar
+## Tags
+
+- Calendar
+- Public APIs
+- Holidays
+- Worldwide
+- Localization
+
+## Timestamps
+
+- **Created:** 2026-05-28
+- **Modified:** 2026-05-29
 
 ## APIs
 
 ### Calendarific Holiday API
+
+REST API returning worldwide public holidays for any of 230+ countries and any year through 2049. Supports filtering by month, day, sub-region (ISO-3166-2), holiday type, and language.
+
+- **Human URL:** [https://calendarific.com/api-documentation](https://calendarific.com/api-documentation)
 - **Base URL:** `https://calendarific.com/api/v2`
-- **Documentation:** https://calendarific.com/api-documentation
-- **Authentication:** API key via `api_key` query parameter
-- **Operations:**
-  - `GET /holidays` — List holidays by country and year (with optional month/day/type/location/language filters)
-  - `GET /countries` — List supported countries with ISO-3166 codes
-  - `GET /languages` — List supported languages with ISO-639 codes
 
-## Artifacts
+#### Tags
 
-| Artifact | Path |
-|---|---|
-| OpenAPI | [`openapi/calendarific-openapi.yml`](openapi/calendarific-openapi.yml) |
-| JSON Schema | [`json-schema/`](json-schema/) (holiday, country, language) |
-| JSON Structure | [`json-structure/`](json-structure/) (holiday, country, language) |
-| JSON-LD | [`json-ld/calendarific-context.jsonld`](json-ld/calendarific-context.jsonld) |
-| Examples | [`examples/`](examples/) (holidays, countries, languages) |
-| Spectral Rules | [`rules/calendarific-rules.yml`](rules/calendarific-rules.yml) |
-| Vocabulary | [`vocabulary/calendarific-vocabulary.yml`](vocabulary/calendarific-vocabulary.yml) |
-| Capabilities (shared) | [`capabilities/shared/calendarific-holidays.yaml`](capabilities/shared/calendarific-holidays.yaml) |
-| Capabilities (workflows) | [`capabilities/holiday-calendar-sync.yaml`](capabilities/holiday-calendar-sync.yaml), [`capabilities/global-coverage-catalog.yaml`](capabilities/global-coverage-catalog.yaml) |
-| Plans / Pricing | [`plans/calendarific-plans-pricing.yml`](plans/calendarific-plans-pricing.yml) |
-| Rate Limits | [`rate-limits/calendarific-rate-limits.yml`](rate-limits/calendarific-rate-limits.yml) |
-| FinOps | [`finops/calendarific-finops.yml`](finops/calendarific-finops.yml) |
+- Calendar
+- Holidays
+- Worldwide
 
-## SDKs
+#### Properties
 
-| Language | Repo |
-|---|---|
-| Python | https://github.com/calendarific/python-calendarific |
-| Node.js | https://github.com/calendarific/node-calendarific |
-| PHP | https://github.com/calendarific/php-calendarific |
-| Ruby | https://github.com/calendarific/ruby-calendarific |
-| Go | https://github.com/calendarific/go-calendarific |
-| .NET (community) | https://github.com/guibranco/calendarific-sdk-dotnet |
-| PowerShell (community) | https://github.com/rchaganti/PSCalendarific |
-| Elixir (community) | https://github.com/Bounceapp/elixir-calendarific |
+- [Documentation](https://calendarific.com/api-documentation)
+- [API Reference](https://calendarific.com/api-documentation)
+- [OpenAPI](openapi/calendarific-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/calendarific.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/calendarific.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [JSON Schema](json-schema/calendarific-holiday-schema.json) — [JSON Schema](https://json-schema.org/specification)
+- [JSON Schema](json-schema/calendarific-country-schema.json) — [JSON Schema](https://json-schema.org/specification)
+- [JSON Schema](json-schema/calendarific-language-schema.json) — [JSON Schema](https://json-schema.org/specification)
+- [JSON Structure](json-structure/calendarific-holiday-structure.json)
+- [JSON Structure](json-structure/calendarific-country-structure.json)
+- [JSON Structure](json-structure/calendarific-language-structure.json)
+- [JSON-LD](json-ld/calendarific-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
+- [Example](examples/calendarific-list-holidays-example.json)
+- [Example](examples/calendarific-list-countries-example.json)
+- [Example](examples/calendarific-list-languages-example.json)
+- [Authentication](https://calendarific.com/api-documentation)
+- [Rate Limits](rate-limits/calendarific-rate-limits.yml)
 
-## MCP Servers
-- **Calendarific MCP Server** (community) — https://github.com/noalimoy/calendarific-mcp-server
+## Common Properties
 
-## Plans (Pricing)
-
-| Plan | Price | Monthly Quota | Support |
-|---|---|---|---|
-| Free | $0 | 500 requests/month | Community |
-| Starter | $12/mo or $100/yr | 10,000 requests/month | Email |
-| Business | $500/yr | 50,000 requests/month | Priority |
-| Enterprise | $4,000/yr | 50,000,000 requests/month | Dedicated |
-
-Free tier additionally enforces a 1,000 requests/day soft cap (HTTP 429 on overage).
-
-## Tags
-Calendar, Public APIs, Holidays, Worldwide, Localization
-
-## Timestamps
-- **Created:** 2026-05-28
-- **Modified:** 2026-05-29
+- [Website](https://calendarific.com/)
+- [Developer Portal](https://calendarific.com/api-documentation)
+- [Sign Up](https://calendarific.com/signup)
+- [Login](https://calendarific.com/login)
+- [Pricing](https://calendarific.com/pricing)
+- [Plans](plans/calendarific-plans-pricing.yml)
+- [Rate Limits](rate-limits/calendarific-rate-limits.yml)
+- [Terms of Service](https://calendarific.com/terms)
+- [Privacy Policy](https://calendarific.com/privacy)
+- [Support](https://calendarific.com/contact)
+- [Contact](https://calendarific.com/contact)
+- [GitHub Organization](https://github.com/calendarific)
+- [SDK](https://github.com/calendarific/python-calendarific)
+- [SDK](https://github.com/calendarific/node-calendarific)
+- [SDK](https://github.com/calendarific/php-calendarific)
+- [SDK](https://github.com/calendarific/ruby-calendarific)
+- [SDK](https://github.com/calendarific/go-calendarific)
+- [SDK](https://github.com/guibranco/calendarific-sdk-dotnet)
+- [SDK](https://github.com/rchaganti/PSCalendarific)
+- [SDK](https://github.com/Bounceapp/elixir-calendarific)
+- [Spectral Rules](rules/calendarific-rules.yml)
+- [Vocabulary](vocabulary/calendarific-vocabulary.yml)
+- [Tools](https://github.com/noalimoy/calendarific-mcp-server)
+- [Features](undefined)
+- [Use Cases](undefined)
+- [Integrations](undefined)
+- [Solutions](undefined)
 
 ## Maintainers
-- **Kin Lane** — kin@apievangelist.com
+
+**FN:** Kin Lane
+**Email:** kin@apievangelist.com
