@@ -1,0 +1,147 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Calendarific Holiday API",
+    "version": "2.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "api_key",
+      "value": "{{api_key}}",
+      "placement": "query"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Holidays",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Holidays",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://calendarific.com/api/v2/holidays",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "Calendarific API key issued via the developer console."
+              },
+              {
+                "name": "country",
+                "value": "",
+                "type": "query",
+                "description": "ISO-3166 country code (e.g., US, GB, IN)."
+              },
+              {
+                "name": "year",
+                "value": "",
+                "type": "query",
+                "description": "Year to retrieve holidays for. Historical data available through 2049."
+              },
+              {
+                "name": "day",
+                "value": "",
+                "type": "query",
+                "description": "Filter to a specific day of the month (1-31)."
+              },
+              {
+                "name": "month",
+                "value": "",
+                "type": "query",
+                "description": "Filter to a specific month (1-12)."
+              },
+              {
+                "name": "location",
+                "value": "",
+                "type": "query",
+                "description": "ISO-3166 state or region code (e.g., us-ca for California)."
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Filter by holiday type (national, local, religious, observance)."
+              },
+              {
+                "name": "language",
+                "value": "",
+                "type": "query",
+                "description": "Premium parameter. Two-letter ISO639 language code."
+              },
+              {
+                "name": "uuid",
+                "value": "",
+                "type": "query",
+                "description": "Premium parameter. Include UUID values for each holiday."
+              }
+            ]
+          },
+          "docs": "Returns holidays for a given country and year. Supports filtering\nby month, day, location (sub-region), holiday type, and language.\n"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Countries",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Countries",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://calendarific.com/api/v2/countries",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "Calendarific API key."
+              }
+            ]
+          },
+          "docs": "Returns the full list of countries supported by Calendarific,\nincluding ISO-3166 codes and the languages supported per country.\n"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Languages",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Languages",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://calendarific.com/api/v2/languages",
+            "params": [
+              {
+                "name": "api_key",
+                "value": "",
+                "type": "query",
+                "description": "Calendarific API key."
+              }
+            ]
+          },
+          "docs": "Returns the full list of languages supported by Calendarific\nwith their two-letter ISO639 codes.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
