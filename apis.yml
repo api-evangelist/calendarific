@@ -50,11 +50,11 @@ apis:
         url: json-structure/calendarific-language-structure.json
       - type: JSONLD
         url: json-ld/calendarific-context.jsonld
-      - type: Example
+      - type: Examples
         url: examples/calendarific-list-holidays-example.json
-      - type: Example
+      - type: Examples
         url: examples/calendarific-list-countries-example.json
-      - type: Example
+      - type: Examples
         url: examples/calendarific-list-languages-example.json
       - type: Authentication
         url: https://calendarific.com/api-documentation
@@ -65,7 +65,7 @@ common:
     url: https://calendarific.com/
   - type: DeveloperPortal
     url: https://calendarific.com/api-documentation
-  - type: SignUp
+  - type: Signup
     url: https://calendarific.com/signup
   - type: Login
     url: https://calendarific.com/login
@@ -85,28 +85,28 @@ common:
     url: https://calendarific.com/contact
   - type: GitHubOrganization
     url: https://github.com/calendarific
-  - type: SDK
+  - type: SDKs
     name: Python SDK
     url: https://github.com/calendarific/python-calendarific
-  - type: SDK
+  - type: SDKs
     name: Node.js SDK
     url: https://github.com/calendarific/node-calendarific
-  - type: SDK
+  - type: SDKs
     name: PHP SDK
     url: https://github.com/calendarific/php-calendarific
-  - type: SDK
+  - type: SDKs
     name: Ruby SDK
     url: https://github.com/calendarific/ruby-calendarific
-  - type: SDK
+  - type: SDKs
     name: Go SDK
     url: https://github.com/calendarific/go-calendarific
-  - type: SDK
+  - type: SDKs
     name: .NET SDK (community)
     url: https://github.com/guibranco/calendarific-sdk-dotnet
-  - type: SDK
+  - type: SDKs
     name: PowerShell wrapper (community)
     url: https://github.com/rchaganti/PSCalendarific
-  - type: SDK
+  - type: SDKs
     name: Elixir wrapper (community)
     url: https://github.com/Bounceapp/elixir-calendarific
   - type: SpectralRules
