@@ -61,6 +61,10 @@ apis:
       - type: RateLimits
         url: rate-limits/calendarific-rate-limits.yml
 common:
+  - type: DomainSecurity
+    url: security/calendarific-domain-security.yml
+  - type: Authentication
+    url: authentication/calendarific-authentication.yml
   - type: Website
     url: https://calendarific.com/
   - type: DeveloperPortal

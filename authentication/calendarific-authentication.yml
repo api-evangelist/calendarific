@@ -1,0 +1,16 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/calendarific-openapi.yml
+summary:
+  types:
+  - apiKey
+  api_key_in:
+  - query
+schemes:
+- name: apiKey
+  type: apiKey
+  in: query
+  parameter: api_key
+  description: API key passed as a URL query parameter.
+  sources:
+  - openapi/calendarific-openapi.yml
