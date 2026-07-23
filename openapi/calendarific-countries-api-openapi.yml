@@ -1,0 +1,106 @@
+openapi: 3.0.3
+info:
+  title: Calendarific Holiday Countries API
+  description: 'Worldwide public holidays REST API covering 230+ countries.
+
+    Calendarific provides accurate holiday data including national, local,
+
+    religious, and observance holidays. Useful for ecommerce, scheduling,
+
+    HR systems, travel planning, and global operations.
+
+    '
+  version: '2.0'
+  contact:
+    name: Calendarific Support
+    email: info@calendarific.com
+    url: https://calendarific.com/
+  termsOfService: https://calendarific.com/terms
+  license:
+    name: Commercial
+    url: https://calendarific.com/pricing
+servers:
+- url: https://calendarific.com/api/v2
+  description: Production
+security:
+- apiKey: []
+tags:
+- name: Countries
+  description: List supported countries and their ISO codes.
+paths:
+  /countries:
+    get:
+      tags:
+      - Countries
+      summary: List Countries
+      description: 'Returns the full list of countries supported by Calendarific,
+
+        including ISO-3166 codes and the languages supported per country.
+
+        '
+      operationId: listCountries
+      parameters:
+      - name: api_key
+        in: query
+        required: true
+        description: Calendarific API key.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: List of supported countries.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CountriesResponse'
+        '401':
+          description: Missing or invalid API key.
+        '429':
+          description: Rate limit exceeded.
+components:
+  schemas:
+    Meta:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: HTTP-style status code echoed in the body.
+          example: 200
+      required:
+      - code
+    CountriesResponse:
+      type: object
+      properties:
+        meta:
+          $ref: '#/components/schemas/Meta'
+        response:
+          type: object
+          properties:
+            countries:
+              type: array
+              items:
+                $ref: '#/components/schemas/Country'
+    Country:
+      type: object
+      properties:
+        country_name:
+          type: string
+          example: United States
+        iso-3166:
+          type: string
+          example: US
+        total_holidays:
+          type: integer
+          example: 198
+        supported_languages:
+          type: integer
+          example: 4
+        uuid:
+          type: string
+          format: uuid
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: query
+      name: api_key
+      description: API key passed as a URL query parameter.

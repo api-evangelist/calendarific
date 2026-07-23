@@ -1,0 +1,248 @@
+openapi: 3.0.3
+info:
+  title: Calendarific Holiday Countries Holidays API
+  description: 'Worldwide public holidays REST API covering 230+ countries.
+
+    Calendarific provides accurate holiday data including national, local,
+
+    religious, and observance holidays. Useful for ecommerce, scheduling,
+
+    HR systems, travel planning, and global operations.
+
+    '
+  version: '2.0'
+  contact:
+    name: Calendarific Support
+    email: info@calendarific.com
+    url: https://calendarific.com/
+  termsOfService: https://calendarific.com/terms
+  license:
+    name: Commercial
+    url: https://calendarific.com/pricing
+servers:
+- url: https://calendarific.com/api/v2
+  description: Production
+security:
+- apiKey: []
+tags:
+- name: Holidays
+  description: Retrieve holiday data for any country and year.
+paths:
+  /holidays:
+    get:
+      tags:
+      - Holidays
+      summary: List Holidays
+      description: 'Returns holidays for a given country and year. Supports filtering
+
+        by month, day, location (sub-region), holiday type, and language.
+
+        '
+      operationId: listHolidays
+      parameters:
+      - name: api_key
+        in: query
+        required: true
+        description: Calendarific API key issued via the developer console.
+        schema:
+          type: string
+      - name: country
+        in: query
+        required: true
+        description: ISO-3166 country code (e.g., US, GB, IN).
+        schema:
+          type: string
+          minLength: 2
+          maxLength: 2
+      - name: year
+        in: query
+        required: true
+        description: Year to retrieve holidays for. Historical data available through 2049.
+        schema:
+          type: integer
+          minimum: 1900
+          maximum: 2049
+      - name: day
+        in: query
+        required: false
+        description: Filter to a specific day of the month (1-31).
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 31
+      - name: month
+        in: query
+        required: false
+        description: Filter to a specific month (1-12).
+        schema:
+          type: integer
+          minimum: 1
+          maximum: 12
+      - name: location
+        in: query
+        required: false
+        description: ISO-3166 state or region code (e.g., us-ca for California).
+        schema:
+          type: string
+      - name: type
+        in: query
+        required: false
+        description: Filter by holiday type (national, local, religious, observance).
+        schema:
+          type: string
+          enum:
+          - national
+          - local
+          - religious
+          - observance
+      - name: language
+        in: query
+        required: false
+        description: Premium parameter. Two-letter ISO639 language code.
+        schema:
+          type: string
+          minLength: 2
+          maxLength: 2
+      - name: uuid
+        in: query
+        required: false
+        description: Premium parameter. Include UUID values for each holiday.
+        schema:
+          type: boolean
+      responses:
+        '200':
+          description: A list of matching holidays.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HolidaysResponse'
+        '401':
+          description: Missing or invalid API key.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '422':
+          description: Invalid parameters.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '429':
+          description: Rate limit exceeded.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error.
+        '503':
+          description: Service unavailable.
+components:
+  schemas:
+    Error:
+      type: object
+      properties:
+        meta:
+          $ref: '#/components/schemas/Meta'
+        error:
+          type: object
+          properties:
+            type:
+              type: string
+            info:
+              type: string
+    Meta:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: HTTP-style status code echoed in the body.
+          example: 200
+      required:
+      - code
+    HolidayDate:
+      type: object
+      properties:
+        iso:
+          type: string
+          description: ISO 8601 date string.
+          example: '2024-12-25'
+        datetime:
+          $ref: '#/components/schemas/HolidayDateComponents'
+    HolidayCountry:
+      type: object
+      properties:
+        id:
+          type: string
+          description: ISO-3166 alpha-2 country code (lowercase).
+          example: us
+        name:
+          type: string
+          example: United States
+    Holiday:
+      type: object
+      properties:
+        name:
+          type: string
+          example: Christmas Day
+        description:
+          type: string
+          example: Christmas Day is one of the biggest Christian celebrations and falls on the 25th of December each year.
+        country:
+          $ref: '#/components/schemas/HolidayCountry'
+        date:
+          $ref: '#/components/schemas/HolidayDate'
+        type:
+          type: array
+          items:
+            type: string
+          example:
+          - National holiday
+        primary_type:
+          type: string
+          example: National holiday
+        canonical_url:
+          type: string
+          format: uri
+        urlid:
+          type: string
+        locations:
+          type: string
+        states:
+          oneOf:
+          - type: string
+          - type: array
+            items:
+              type: object
+        uuid:
+          type: string
+          format: uuid
+          description: Returned only when uuid=true is requested (premium).
+    HolidaysResponse:
+      type: object
+      properties:
+        meta:
+          $ref: '#/components/schemas/Meta'
+        response:
+          type: object
+          properties:
+            holidays:
+              type: array
+              items:
+                $ref: '#/components/schemas/Holiday'
+    HolidayDateComponents:
+      type: object
+      properties:
+        year:
+          type: integer
+        month:
+          type: integer
+        day:
+          type: integer
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: query
+      name: api_key
+      description: API key passed as a URL query parameter.

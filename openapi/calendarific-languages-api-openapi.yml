@@ -1,0 +1,97 @@
+openapi: 3.0.3
+info:
+  title: Calendarific Holiday Countries Languages API
+  description: 'Worldwide public holidays REST API covering 230+ countries.
+
+    Calendarific provides accurate holiday data including national, local,
+
+    religious, and observance holidays. Useful for ecommerce, scheduling,
+
+    HR systems, travel planning, and global operations.
+
+    '
+  version: '2.0'
+  contact:
+    name: Calendarific Support
+    email: info@calendarific.com
+    url: https://calendarific.com/
+  termsOfService: https://calendarific.com/terms
+  license:
+    name: Commercial
+    url: https://calendarific.com/pricing
+servers:
+- url: https://calendarific.com/api/v2
+  description: Production
+security:
+- apiKey: []
+tags:
+- name: Languages
+  description: List supported languages and their ISO codes.
+paths:
+  /languages:
+    get:
+      tags:
+      - Languages
+      summary: List Languages
+      description: 'Returns the full list of languages supported by Calendarific
+
+        with their two-letter ISO639 codes.
+
+        '
+      operationId: listLanguages
+      parameters:
+      - name: api_key
+        in: query
+        required: true
+        description: Calendarific API key.
+        schema:
+          type: string
+      responses:
+        '200':
+          description: List of supported languages.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LanguagesResponse'
+        '401':
+          description: Missing or invalid API key.
+        '429':
+          description: Rate limit exceeded.
+components:
+  schemas:
+    Meta:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: HTTP-style status code echoed in the body.
+          example: 200
+      required:
+      - code
+    LanguagesResponse:
+      type: object
+      properties:
+        meta:
+          $ref: '#/components/schemas/Meta'
+        response:
+          type: object
+          properties:
+            languages:
+              type: array
+              items:
+                $ref: '#/components/schemas/Language'
+    Language:
+      type: object
+      properties:
+        name:
+          type: string
+          example: English
+        iso-639:
+          type: string
+          example: en
+  securitySchemes:
+    apiKey:
+      type: apiKey
+      in: query
+      name: api_key
+      description: API key passed as a URL query parameter.
