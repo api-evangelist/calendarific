@@ -1,4 +1,18 @@
 aid: calendarific
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/calendarific.png
 name: Calendarific
 description: >-
   Worldwide public holidays REST API covering 230+ countries. Calendarific provides national, local, religious, and
@@ -19,48 +33,123 @@ tags:
   - Worldwide
   - Localization
 apis:
-  - name: Calendarific Holiday API
-    description: >-
-      REST API returning worldwide public holidays for any of 230+ countries and any year through 2049. Supports
-      filtering by month, day, sub-region (ISO-3166-2), holiday type, and language.
-    humanURL: https://calendarific.com/api-documentation
-    baseURL: https://calendarific.com/api/v2
-    tags:
-      - Calendar
-      - Holidays
-      - Worldwide
-    properties:
-      - type: Documentation
-        url: https://calendarific.com/api-documentation
-      - type: APIReference
-        url: https://calendarific.com/api-documentation
-      - type: OpenAPI
-        url: openapi/calendarific-openapi.yml
-      - type: JSONSchema
-        url: json-schema/calendarific-holiday-schema.json
-      - type: JSONSchema
-        url: json-schema/calendarific-country-schema.json
-      - type: JSONSchema
-        url: json-schema/calendarific-language-schema.json
-      - type: JSONStructure
-        url: json-structure/calendarific-holiday-structure.json
-      - type: JSONStructure
-        url: json-structure/calendarific-country-structure.json
-      - type: JSONStructure
-        url: json-structure/calendarific-language-structure.json
-      - type: JSONLD
-        url: json-ld/calendarific-context.jsonld
-      - type: Examples
-        url: examples/calendarific-list-holidays-example.json
-      - type: Examples
-        url: examples/calendarific-list-countries-example.json
-      - type: Examples
-        url: examples/calendarific-list-languages-example.json
-      - type: Authentication
-        url: https://calendarific.com/api-documentation
-      - type: RateLimits
-        url: rate-limits/calendarific-rate-limits.yml
+- aid: calendarific:calendarific-countries-api
+  name: Calendarific Countries API
+  description: List supported countries and their ISO codes.
+  humanURL: https://calendarific.com/api-documentation
+  baseURL: https://calendarific.com/api/v2
+  tags:
+  - Countries
+  properties:
+  - type: OpenAPI
+    url: openapi/calendarific-countries-api-openapi.yml
+  - type: Documentation
+    url: https://calendarific.com/api-documentation
+  - type: APIReference
+    url: https://calendarific.com/api-documentation
+  - type: JSONSchema
+    url: json-schema/calendarific-holiday-schema.json
+  - type: JSONSchema
+    url: json-schema/calendarific-country-schema.json
+  - type: JSONSchema
+    url: json-schema/calendarific-language-schema.json
+  - type: JSONStructure
+    url: json-structure/calendarific-holiday-structure.json
+  - type: JSONStructure
+    url: json-structure/calendarific-country-structure.json
+  - type: JSONStructure
+    url: json-structure/calendarific-language-structure.json
+  - type: JSONLD
+    url: json-ld/calendarific-context.jsonld
+  - type: Examples
+    url: examples/calendarific-list-holidays-example.json
+  - type: Examples
+    url: examples/calendarific-list-countries-example.json
+  - type: Examples
+    url: examples/calendarific-list-languages-example.json
+  - type: Authentication
+    url: https://calendarific.com/api-documentation
+  - type: RateLimits
+    url: rate-limits/calendarific-rate-limits.yml
+- aid: calendarific:calendarific-holidays-api
+  name: Calendarific Holidays API
+  description: Retrieve holiday data for any country and year.
+  humanURL: https://calendarific.com/api-documentation
+  baseURL: https://calendarific.com/api/v2
+  tags:
+  - Holidays
+  properties:
+  - type: OpenAPI
+    url: openapi/calendarific-holidays-api-openapi.yml
+  - type: Documentation
+    url: https://calendarific.com/api-documentation
+  - type: APIReference
+    url: https://calendarific.com/api-documentation
+  - type: JSONSchema
+    url: json-schema/calendarific-holiday-schema.json
+  - type: JSONSchema
+    url: json-schema/calendarific-country-schema.json
+  - type: JSONSchema
+    url: json-schema/calendarific-language-schema.json
+  - type: JSONStructure
+    url: json-structure/calendarific-holiday-structure.json
+  - type: JSONStructure
+    url: json-structure/calendarific-country-structure.json
+  - type: JSONStructure
+    url: json-structure/calendarific-language-structure.json
+  - type: JSONLD
+    url: json-ld/calendarific-context.jsonld
+  - type: Examples
+    url: examples/calendarific-list-holidays-example.json
+  - type: Examples
+    url: examples/calendarific-list-countries-example.json
+  - type: Examples
+    url: examples/calendarific-list-languages-example.json
+  - type: Authentication
+    url: https://calendarific.com/api-documentation
+  - type: RateLimits
+    url: rate-limits/calendarific-rate-limits.yml
+- aid: calendarific:calendarific-languages-api
+  name: Calendarific Languages API
+  description: List supported languages and their ISO codes.
+  humanURL: https://calendarific.com/api-documentation
+  baseURL: https://calendarific.com/api/v2
+  tags:
+  - Languages
+  properties:
+  - type: OpenAPI
+    url: openapi/calendarific-languages-api-openapi.yml
+  - type: Documentation
+    url: https://calendarific.com/api-documentation
+  - type: APIReference
+    url: https://calendarific.com/api-documentation
+  - type: JSONSchema
+    url: json-schema/calendarific-holiday-schema.json
+  - type: JSONSchema
+    url: json-schema/calendarific-country-schema.json
+  - type: JSONSchema
+    url: json-schema/calendarific-language-schema.json
+  - type: JSONStructure
+    url: json-structure/calendarific-holiday-structure.json
+  - type: JSONStructure
+    url: json-structure/calendarific-country-structure.json
+  - type: JSONStructure
+    url: json-structure/calendarific-language-structure.json
+  - type: JSONLD
+    url: json-ld/calendarific-context.jsonld
+  - type: Examples
+    url: examples/calendarific-list-holidays-example.json
+  - type: Examples
+    url: examples/calendarific-list-countries-example.json
+  - type: Examples
+    url: examples/calendarific-list-languages-example.json
+  - type: Authentication
+    url: https://calendarific.com/api-documentation
+  - type: RateLimits
+    url: rate-limits/calendarific-rate-limits.yml
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/calendarific/overview
   - type: AgenticAccess
     url: agentic-access/calendarific-agentic-access.yml
   - type: DomainSecurity
