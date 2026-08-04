@@ -1,0 +1,18 @@
+{
+  "provider": "calendarific",
+  "sources": [
+    "calendarific-countries-api-openapi.yml",
+    "calendarific-holidays-api-openapi.yml",
+    "calendarific-languages-api-openapi.yml"
+  ],
+  "outputs": [
+    "calendarific-countries-api-openapi.yml",
+    "calendarific-holidays-api-openapi.yml",
+    "calendarific-languages-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

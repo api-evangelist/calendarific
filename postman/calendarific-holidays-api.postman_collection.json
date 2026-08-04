@@ -1,0 +1,611 @@
+{
+  "info": {
+    "_postman_id": "34e172ce-6e69-4d9c-9d4f-766859ad8f2b",
+    "name": "Calendarific Holiday Countries Holidays API",
+    "description": "Worldwide public holidays REST API covering 230+ countries.\nCalendarific provides accurate holiday data including national, local,\nreligious, and observance holidays. Useful for ecommerce, scheduling,\nHR systems, travel planning, and global operations.\n\n\nContact Support:\n Name: Calendarific Support\n Email: info@calendarific.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:16:50.000Z",
+    "updatedAt": "2026-07-28T01:16:50.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-34e172ce-6e69-4d9c-9d4f-766859ad8f2b"
+  },
+  "item": [
+    {
+      "name": "holidays",
+      "item": [
+        {
+          "name": "List Holidays",
+          "id": "347803e3-5a4e-4359-bbbe-3d266f94d3ee",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/holidays?api_key=<string>&country=<string>&year=<integer>&day=<integer>&month=<integer>&location=<string>&type=observance&language=<string>&uuid=<boolean>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "holidays"
+              ],
+              "query": [
+                {
+                  "description": "(Required) Calendarific API key issued via the developer console.",
+                  "key": "api_key",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) ISO-3166 country code (e.g., US, GB, IN).",
+                  "key": "country",
+                  "value": "<string>"
+                },
+                {
+                  "description": "(Required) Year to retrieve holidays for. Historical data available through 2049.",
+                  "key": "year",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "Filter to a specific day of the month (1-31).",
+                  "key": "day",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "Filter to a specific month (1-12).",
+                  "key": "month",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "ISO-3166 state or region code (e.g., us-ca for California).",
+                  "key": "location",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Filter by holiday type (national, local, religious, observance).",
+                  "key": "type",
+                  "value": "observance"
+                },
+                {
+                  "description": "Premium parameter. Two-letter ISO639 language code.",
+                  "key": "language",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Premium parameter. Include UUID values for each holiday.",
+                  "key": "uuid",
+                  "value": "<boolean>"
+                }
+              ]
+            },
+            "description": "Returns holidays for a given country and year. Supports filtering\nby month, day, location (sub-region), holiday type, and language.\n"
+          },
+          "response": [
+            {
+              "id": "500cc202-dda8-4bcd-a475-2b1b4b1c95a0",
+              "name": "A list of matching holidays.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/holidays?api_key=<API Key>&country=<string>&year=<integer>&day=<integer>&month=<integer>&location=<string>&type=observance&language=<string>&uuid=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "holidays"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Calendarific API key issued via the developer console.",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "description": "(Required) ISO-3166 country code (e.g., US, GB, IN).",
+                      "key": "country",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) Year to retrieve holidays for. Historical data available through 2049.",
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Filter to a specific day of the month (1-31).",
+                      "key": "day",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Filter to a specific month (1-12).",
+                      "key": "month",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "ISO-3166 state or region code (e.g., us-ca for California).",
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Filter by holiday type (national, local, religious, observance).",
+                      "key": "type",
+                      "value": "observance"
+                    },
+                    {
+                      "description": "Premium parameter. Two-letter ISO639 language code.",
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Premium parameter. Include UUID values for each holiday.",
+                      "key": "uuid",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"meta\": {\n    \"code\": \"<integer>\"\n  },\n  \"response\": {\n    \"holidays\": [\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"country\": {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\"\n        },\n        \"date\": {\n          \"iso\": \"<string>\",\n          \"datetime\": {\n            \"year\": \"<integer>\",\n            \"month\": \"<integer>\",\n            \"day\": \"<integer>\"\n          }\n        },\n        \"type\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"primary_type\": \"<string>\",\n        \"canonical_url\": \"<uri>\",\n        \"urlid\": \"<string>\",\n        \"locations\": \"<string>\",\n        \"states\": \"<string>\",\n        \"uuid\": \"<uuid>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"description\": \"<string>\",\n        \"country\": {\n          \"id\": \"<string>\",\n          \"name\": \"<string>\"\n        },\n        \"date\": {\n          \"iso\": \"<string>\",\n          \"datetime\": {\n            \"year\": \"<integer>\",\n            \"month\": \"<integer>\",\n            \"day\": \"<integer>\"\n          }\n        },\n        \"type\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"primary_type\": \"<string>\",\n        \"canonical_url\": \"<uri>\",\n        \"urlid\": \"<string>\",\n        \"locations\": \"<string>\",\n        \"states\": \"<string>\",\n        \"uuid\": \"<uuid>\"\n      }\n    ]\n  }\n}",
+              "createdAt": "2026-07-28T01:16:50.000Z",
+              "updatedAt": "2026-07-28T01:16:50.000Z",
+              "uid": "35240-500cc202-dda8-4bcd-a475-2b1b4b1c95a0"
+            },
+            {
+              "id": "593d4686-7ced-4bd2-8367-702ef14febaf",
+              "name": "Missing or invalid API key.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/holidays?api_key=<API Key>&country=<string>&year=<integer>&day=<integer>&month=<integer>&location=<string>&type=observance&language=<string>&uuid=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "holidays"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Calendarific API key issued via the developer console.",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "description": "(Required) ISO-3166 country code (e.g., US, GB, IN).",
+                      "key": "country",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) Year to retrieve holidays for. Historical data available through 2049.",
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Filter to a specific day of the month (1-31).",
+                      "key": "day",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Filter to a specific month (1-12).",
+                      "key": "month",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "ISO-3166 state or region code (e.g., us-ca for California).",
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Filter by holiday type (national, local, religious, observance).",
+                      "key": "type",
+                      "value": "observance"
+                    },
+                    {
+                      "description": "Premium parameter. Two-letter ISO639 language code.",
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Premium parameter. Include UUID values for each holiday.",
+                      "key": "uuid",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"meta\": {\n    \"code\": \"<integer>\"\n  },\n  \"error\": {\n    \"type\": \"<string>\",\n    \"info\": \"<string>\"\n  }\n}",
+              "createdAt": "2026-07-28T01:16:50.000Z",
+              "updatedAt": "2026-07-28T01:16:50.000Z",
+              "uid": "35240-593d4686-7ced-4bd2-8367-702ef14febaf"
+            },
+            {
+              "id": "7c700153-0168-410c-8344-45582b8a0197",
+              "name": "Invalid parameters.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/holidays?api_key=<API Key>&country=<string>&year=<integer>&day=<integer>&month=<integer>&location=<string>&type=observance&language=<string>&uuid=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "holidays"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Calendarific API key issued via the developer console.",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "description": "(Required) ISO-3166 country code (e.g., US, GB, IN).",
+                      "key": "country",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) Year to retrieve holidays for. Historical data available through 2049.",
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Filter to a specific day of the month (1-31).",
+                      "key": "day",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Filter to a specific month (1-12).",
+                      "key": "month",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "ISO-3166 state or region code (e.g., us-ca for California).",
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Filter by holiday type (national, local, religious, observance).",
+                      "key": "type",
+                      "value": "observance"
+                    },
+                    {
+                      "description": "Premium parameter. Two-letter ISO639 language code.",
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Premium parameter. Include UUID values for each holiday.",
+                      "key": "uuid",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"meta\": {\n    \"code\": \"<integer>\"\n  },\n  \"error\": {\n    \"type\": \"<string>\",\n    \"info\": \"<string>\"\n  }\n}",
+              "createdAt": "2026-07-28T01:16:50.000Z",
+              "updatedAt": "2026-07-28T01:16:50.000Z",
+              "uid": "35240-7c700153-0168-410c-8344-45582b8a0197"
+            },
+            {
+              "id": "5a255c41-78ce-478f-80c0-d0db7724c023",
+              "name": "Rate limit exceeded.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/holidays?api_key=<API Key>&country=<string>&year=<integer>&day=<integer>&month=<integer>&location=<string>&type=observance&language=<string>&uuid=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "holidays"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Calendarific API key issued via the developer console.",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "description": "(Required) ISO-3166 country code (e.g., US, GB, IN).",
+                      "key": "country",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) Year to retrieve holidays for. Historical data available through 2049.",
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Filter to a specific day of the month (1-31).",
+                      "key": "day",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Filter to a specific month (1-12).",
+                      "key": "month",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "ISO-3166 state or region code (e.g., us-ca for California).",
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Filter by holiday type (national, local, religious, observance).",
+                      "key": "type",
+                      "value": "observance"
+                    },
+                    {
+                      "description": "Premium parameter. Two-letter ISO639 language code.",
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Premium parameter. Include UUID values for each holiday.",
+                      "key": "uuid",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"meta\": {\n    \"code\": \"<integer>\"\n  },\n  \"error\": {\n    \"type\": \"<string>\",\n    \"info\": \"<string>\"\n  }\n}",
+              "createdAt": "2026-07-28T01:16:50.000Z",
+              "updatedAt": "2026-07-28T01:16:50.000Z",
+              "uid": "35240-5a255c41-78ce-478f-80c0-d0db7724c023"
+            },
+            {
+              "id": "1d4f2781-1b5f-4ebb-bdde-7adad0e45afa",
+              "name": "Internal server error.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/holidays?api_key=<API Key>&country=<string>&year=<integer>&day=<integer>&month=<integer>&location=<string>&type=observance&language=<string>&uuid=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "holidays"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Calendarific API key issued via the developer console.",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "description": "(Required) ISO-3166 country code (e.g., US, GB, IN).",
+                      "key": "country",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) Year to retrieve holidays for. Historical data available through 2049.",
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Filter to a specific day of the month (1-31).",
+                      "key": "day",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Filter to a specific month (1-12).",
+                      "key": "month",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "ISO-3166 state or region code (e.g., us-ca for California).",
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Filter by holiday type (national, local, religious, observance).",
+                      "key": "type",
+                      "value": "observance"
+                    },
+                    {
+                      "description": "Premium parameter. Two-letter ISO639 language code.",
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Premium parameter. Include UUID values for each holiday.",
+                      "key": "uuid",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:16:50.000Z",
+              "updatedAt": "2026-07-28T01:16:50.000Z",
+              "uid": "35240-1d4f2781-1b5f-4ebb-bdde-7adad0e45afa"
+            },
+            {
+              "id": "a6db4ee4-0d3d-4fb2-b66e-5b270a93aebf",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/holidays?api_key=<API Key>&country=<string>&year=<integer>&day=<integer>&month=<integer>&location=<string>&type=observance&language=<string>&uuid=<boolean>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "holidays"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Calendarific API key issued via the developer console.",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    },
+                    {
+                      "description": "(Required) ISO-3166 country code (e.g., US, GB, IN).",
+                      "key": "country",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) Year to retrieve holidays for. Historical data available through 2049.",
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Filter to a specific day of the month (1-31).",
+                      "key": "day",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Filter to a specific month (1-12).",
+                      "key": "month",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "ISO-3166 state or region code (e.g., us-ca for California).",
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Filter by holiday type (national, local, religious, observance).",
+                      "key": "type",
+                      "value": "observance"
+                    },
+                    {
+                      "description": "Premium parameter. Two-letter ISO639 language code.",
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Premium parameter. Include UUID values for each holiday.",
+                      "key": "uuid",
+                      "value": "<boolean>"
+                    }
+                  ]
+                }
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:16:50.000Z",
+              "updatedAt": "2026-07-28T01:16:50.000Z",
+              "uid": "35240-a6db4ee4-0d3d-4fb2-b66e-5b270a93aebf"
+            }
+          ],
+          "createdAt": "2026-07-28T01:16:50.000Z",
+          "updatedAt": "2026-07-28T01:16:50.000Z",
+          "uid": "35240-347803e3-5a4e-4359-bbbe-3d266f94d3ee"
+        }
+      ],
+      "id": "ad3053a6-fe11-4c9a-947a-15f1bd1e2a11",
+      "createdAt": "2026-07-28T01:16:50.000Z",
+      "updatedAt": "2026-07-28T01:16:50.000Z",
+      "uid": "35240-ad3053a6-fe11-4c9a-947a-15f1bd1e2a11"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://calendarific.com/api/v2"
+    }
+  ]
+}

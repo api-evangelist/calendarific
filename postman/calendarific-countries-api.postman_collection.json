@@ -1,0 +1,199 @@
+{
+  "info": {
+    "_postman_id": "7250e743-113f-467c-be02-8571c16a9db4",
+    "name": "Calendarific Holiday Countries API",
+    "description": "Worldwide public holidays REST API covering 230+ countries.\nCalendarific provides accurate holiday data including national, local,\nreligious, and observance holidays. Useful for ecommerce, scheduling,\nHR systems, travel planning, and global operations.\n\n\nContact Support:\n Name: Calendarific Support\n Email: info@calendarific.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:16:49.000Z",
+    "updatedAt": "2026-07-28T01:16:49.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-7250e743-113f-467c-be02-8571c16a9db4"
+  },
+  "item": [
+    {
+      "name": "countries",
+      "item": [
+        {
+          "name": "List Countries",
+          "id": "bfd54eb4-a797-4b30-ab43-28e056b511a4",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/countries?api_key=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "countries"
+              ],
+              "query": [
+                {
+                  "description": "(Required) Calendarific API key.",
+                  "key": "api_key",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Returns the full list of countries supported by Calendarific,\nincluding ISO-3166 codes and the languages supported per country.\n"
+          },
+          "response": [
+            {
+              "id": "c6905182-0e17-4036-9afa-2878d0530ca7",
+              "name": "List of supported countries.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/countries?api_key=<API Key>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "countries"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Calendarific API key.",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"meta\": {\n    \"code\": \"<integer>\"\n  },\n  \"response\": {\n    \"countries\": [\n      {\n        \"country_name\": \"<string>\",\n        \"iso-3166\": \"<string>\",\n        \"total_holidays\": \"<integer>\",\n        \"supported_languages\": \"<integer>\",\n        \"uuid\": \"<uuid>\"\n      },\n      {\n        \"country_name\": \"<string>\",\n        \"iso-3166\": \"<string>\",\n        \"total_holidays\": \"<integer>\",\n        \"supported_languages\": \"<integer>\",\n        \"uuid\": \"<uuid>\"\n      }\n    ]\n  }\n}",
+              "createdAt": "2026-07-28T01:16:50.000Z",
+              "updatedAt": "2026-07-28T01:16:50.000Z",
+              "uid": "35240-c6905182-0e17-4036-9afa-2878d0530ca7"
+            },
+            {
+              "id": "847f5a90-72c9-4f04-87cb-4d44d787a6e2",
+              "name": "Missing or invalid API key.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/countries?api_key=<API Key>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "countries"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Calendarific API key.",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:16:50.000Z",
+              "updatedAt": "2026-07-28T01:16:50.000Z",
+              "uid": "35240-847f5a90-72c9-4f04-87cb-4d44d787a6e2"
+            },
+            {
+              "id": "ecd8a83b-cb4e-41f6-8981-d65afac7822d",
+              "name": "Rate limit exceeded.",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/countries?api_key=<API Key>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "countries"
+                  ],
+                  "query": [
+                    {
+                      "description": "(Required) Calendarific API key.",
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ]
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T01:16:50.000Z",
+              "updatedAt": "2026-07-28T01:16:50.000Z",
+              "uid": "35240-ecd8a83b-cb4e-41f6-8981-d65afac7822d"
+            }
+          ],
+          "createdAt": "2026-07-28T01:16:50.000Z",
+          "updatedAt": "2026-07-28T01:16:50.000Z",
+          "uid": "35240-bfd54eb4-a797-4b30-ab43-28e056b511a4"
+        }
+      ],
+      "id": "3d924abd-f8bf-47a2-a37f-d1b77670a66b",
+      "createdAt": "2026-07-28T01:16:50.000Z",
+      "updatedAt": "2026-07-28T01:16:50.000Z",
+      "uid": "35240-3d924abd-f8bf-47a2-a37f-d1b77670a66b"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key",
+        "type": "string"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}",
+        "type": "string"
+      },
+      {
+        "key": "in",
+        "value": "query",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://calendarific.com/api/v2"
+    }
+  ]
+}
