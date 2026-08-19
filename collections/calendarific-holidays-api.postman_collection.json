@@ -1,0 +1,583 @@
+{
+  "item": [
+    {
+      "id": "f6e97d57-cb6b-4d94-accd-6f2fa976a258",
+      "name": "Holidays",
+      "description": {
+        "content": "Retrieve holiday data for any country and year.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "b55d1c51-e2c8-44b0-b0f1-ac9085c9f418",
+          "name": "List Holidays",
+          "request": {
+            "name": "List Holidays",
+            "description": {
+              "content": "Returns holidays for a given country and year. Supports filtering\nby month, day, location (sub-region), holiday type, and language.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "holidays"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "api_key",
+                  "value": "<string>",
+                  "description": "(Required) Calendarific API key issued via the developer console."
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>",
+                  "description": "(Required) ISO-3166 country code (e.g., US, GB, IN)."
+                },
+                {
+                  "disabled": false,
+                  "key": "year",
+                  "value": "<integer>",
+                  "description": "(Required) Year to retrieve holidays for. Historical data available through 2049."
+                },
+                {
+                  "disabled": false,
+                  "key": "day",
+                  "value": "<integer>",
+                  "description": "Filter to a specific day of the month (1-31)."
+                },
+                {
+                  "disabled": false,
+                  "key": "month",
+                  "value": "<integer>",
+                  "description": "Filter to a specific month (1-12)."
+                },
+                {
+                  "disabled": false,
+                  "key": "location",
+                  "value": "<string>",
+                  "description": "ISO-3166 state or region code (e.g., us-ca for California)."
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "Filter by holiday type (national, local, religious, observance)."
+                },
+                {
+                  "disabled": false,
+                  "key": "language",
+                  "value": "<string>",
+                  "description": "Premium parameter. Two-letter ISO639 language code."
+                },
+                {
+                  "disabled": false,
+                  "key": "uuid",
+                  "value": "<boolean>",
+                  "description": "Premium parameter. Include UUID values for each holiday."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "143d91d0-db72-486f-a521-94d9d7c8ac05",
+              "name": "A list of matching holidays.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "holidays"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "day",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "month",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "uuid",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"code\": 200\n  },\n  \"response\": {\n    \"holidays\": [\n      {\n        \"name\": \"Christmas Day\",\n        \"description\": \"Christmas Day is one of the biggest Christian celebrations and falls on the 25th of December each year.\",\n        \"country\": {\n          \"id\": \"us\",\n          \"name\": \"United States\"\n        },\n        \"date\": {\n          \"iso\": \"2024-12-25\",\n          \"datetime\": {\n            \"year\": 2990,\n            \"month\": 3023,\n            \"day\": 3030\n          }\n        },\n        \"type\": [\n          \"National holiday\"\n        ],\n        \"primary_type\": \"National holiday\",\n        \"canonical_url\": \"http://EtLyc.kjvpr2+idg0wOkDw0x3MPiBuwcCmV6C6ssXYqxjq6bFwMu1m\",\n        \"urlid\": \"string\",\n        \"locations\": \"string\",\n        \"states\": \"string\",\n        \"uuid\": \"2ef3b4f2-c94e-c16c-0d1c-cce47506003d\"\n      },\n      {\n        \"name\": \"Christmas Day\",\n        \"description\": \"Christmas Day is one of the biggest Christian celebrations and falls on the 25th of December each year.\",\n        \"country\": {\n          \"id\": \"us\",\n          \"name\": \"United States\"\n        },\n        \"date\": {\n          \"iso\": \"2024-12-25\",\n          \"datetime\": {\n            \"year\": 367,\n            \"month\": 2274,\n            \"day\": 8780\n          }\n        },\n        \"type\": [\n          \"National holiday\"\n        ],\n        \"primary_type\": \"National holiday\",\n        \"canonical_url\": \"https://hximLTAMGBNFiNbc.ucfbb9TaKWqKo-lsDU\",\n        \"urlid\": \"string\",\n        \"locations\": \"string\",\n        \"states\": \"string\",\n        \"uuid\": \"1d46f033-26a5-f152-12eb-93cf85da071f\"\n      }\n    ]\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8df6c227-2fe7-4ef7-93f5-2b07c41ab28d",
+              "name": "Missing or invalid API key.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "holidays"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "day",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "month",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "uuid",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"code\": 200\n  },\n  \"error\": {\n    \"type\": \"string\",\n    \"info\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "6383665c-4bf6-4cfa-a7b5-a7b2946ac212",
+              "name": "Invalid parameters.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "holidays"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "day",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "month",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "uuid",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"code\": 200\n  },\n  \"error\": {\n    \"type\": \"string\",\n    \"info\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8e428a66-a873-4492-a28f-cdd0b8dcdeee",
+              "name": "Rate limit exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "holidays"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "day",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "month",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "uuid",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"meta\": {\n    \"code\": 200\n  },\n  \"error\": {\n    \"type\": \"string\",\n    \"info\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3842c3fa-9df7-4830-836b-10650ed352e0",
+              "name": "Internal server error.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "holidays"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "day",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "month",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "uuid",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "7191b2b6-e815-46af-99e2-022eea1f446c",
+              "name": "Service unavailable.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "holidays"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "api_key",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "year",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "day",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "month",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "location",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "language",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "uuid",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "api_key",
+                      "value": "<API Key>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Service Unavailable",
+              "code": 503,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://calendarific.com/api/v2",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "api_key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "query"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "65c5a373-78aa-486d-a0d4-eee32bb412d7",
+    "name": "Calendarific Holiday Countries Holidays API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "Worldwide public holidays REST API covering 230+ countries.\nCalendarific provides accurate holiday data including national, local,\nreligious, and observance holidays. Useful for ecommerce, scheduling,\nHR systems, travel planning, and global operations.\n\n\nContact Support:\n Name: Calendarific Support\n Email: info@calendarific.com",
+      "type": "text/plain"
+    }
+  }
+}
