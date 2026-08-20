@@ -115,6 +115,8 @@ apis:
   humanURL: https://calendarific.com/api-documentation
   baseURL: https://calendarific.com/api/v2
   tags:
+  - Language
+  tags_raw:
   - Languages
   properties:
   - type: OpenAPI
