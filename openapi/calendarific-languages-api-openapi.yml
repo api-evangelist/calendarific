@@ -1,15 +1,13 @@
-openapi: 3.0.3
+openapi: 3.2.0
 info:
-  title: Calendarific Holiday Countries Languages API
+  title: Calendarific Holiday Languages API
   description: 'Worldwide public holidays REST API covering 230+ countries.
 
     Calendarific provides accurate holiday data including national, local,
 
     religious, and observance holidays. Useful for ecommerce, scheduling,
 
-    HR systems, travel planning, and global operations.
-
-    '
+    HR systems, travel planning, and global operations.'
   version: '2.0'
   contact:
     name: Calendarific Support
@@ -35,9 +33,7 @@ paths:
       summary: List Languages
       description: 'Returns the full list of languages supported by Calendarific
 
-        with their two-letter ISO639 codes.
-
-        '
+        with their two-letter ISO639 codes.'
       operationId: listLanguages
       parameters:
       - name: api_key

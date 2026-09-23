@@ -1,9 +1,7 @@
 {
   "provider": "calendarific",
   "sources": [
-    "calendarific-countries-api-openapi.yml",
-    "calendarific-holidays-api-openapi.yml",
-    "calendarific-languages-api-openapi.yml"
+    "_original/calendarific-openapi.yml"
   ],
   "outputs": [
     "calendarific-countries-api-openapi.yml",
@@ -13,6 +11,14 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "calendarific-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "calendarific-countries-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "calendarific-holidays-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "calendarific-languages-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
