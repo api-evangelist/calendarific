@@ -136,6 +136,27 @@ paths:
           description: Service unavailable.
 components:
   schemas:
+    HolidaysResponse:
+      type: object
+      properties:
+        meta:
+          $ref: '#/components/schemas/Meta'
+        response:
+          type: object
+          properties:
+            holidays:
+              type: array
+              items:
+                $ref: '#/components/schemas/Holiday'
+    Meta:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: HTTP-style status code echoed in the body.
+          example: 200
+      required:
+      - code
     HolidayCountry:
       type: object
       properties:
@@ -146,15 +167,27 @@ components:
         name:
           type: string
           example: United States
-    HolidayDate:
+    Error:
       type: object
       properties:
-        iso:
-          type: string
-          description: ISO 8601 date string.
-          example: '2024-12-25'
-        datetime:
-          $ref: '#/components/schemas/HolidayDateComponents'
+        meta:
+          $ref: '#/components/schemas/Meta'
+        error:
+          type: object
+          properties:
+            type:
+              type: string
+            info:
+              type: string
+    HolidayDateComponents:
+      type: object
+      properties:
+        year:
+          type: integer
+        month:
+          type: integer
+        day:
+          type: integer
     Holiday:
       type: object
       properties:
@@ -194,48 +227,15 @@ components:
           type: string
           format: uuid
           description: Returned only when uuid=true is requested (premium).
-    HolidayDateComponents:
+    HolidayDate:
       type: object
       properties:
-        year:
-          type: integer
-        month:
-          type: integer
-        day:
-          type: integer
-    Error:
-      type: object
-      properties:
-        meta:
-          $ref: '#/components/schemas/Meta'
-        error:
-          type: object
-          properties:
-            type:
-              type: string
-            info:
-              type: string
-    Meta:
-      type: object
-      properties:
-        code:
-          type: integer
-          description: HTTP-style status code echoed in the body.
-          example: 200
-      required:
-      - code
-    HolidaysResponse:
-      type: object
-      properties:
-        meta:
-          $ref: '#/components/schemas/Meta'
-        response:
-          type: object
-          properties:
-            holidays:
-              type: array
-              items:
-                $ref: '#/components/schemas/Holiday'
+        iso:
+          type: string
+          description: ISO 8601 date string.
+          example: '2024-12-25'
+        datetime:
+          $ref: '#/components/schemas/HolidayDateComponents'
   securitySchemes:
     apiKey:
       type: apiKey
