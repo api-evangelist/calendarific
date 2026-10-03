@@ -55,6 +55,27 @@ paths:
           description: Rate limit exceeded.
 components:
   schemas:
+    Meta:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: HTTP-style status code echoed in the body.
+          example: 200
+      required:
+      - code
+    CountriesResponse:
+      type: object
+      properties:
+        meta:
+          $ref: '#/components/schemas/Meta'
+        response:
+          type: object
+          properties:
+            countries:
+              type: array
+              items:
+                $ref: '#/components/schemas/Country'
     Country:
       type: object
       properties:
@@ -73,27 +94,6 @@ components:
         uuid:
           type: string
           format: uuid
-    CountriesResponse:
-      type: object
-      properties:
-        meta:
-          $ref: '#/components/schemas/Meta'
-        response:
-          type: object
-          properties:
-            countries:
-              type: array
-              items:
-                $ref: '#/components/schemas/Country'
-    Meta:
-      type: object
-      properties:
-        code:
-          type: integer
-          description: HTTP-style status code echoed in the body.
-          example: 200
-      required:
-      - code
   securitySchemes:
     apiKey:
       type: apiKey

@@ -136,6 +136,15 @@ paths:
           description: Service unavailable.
 components:
   schemas:
+    HolidayDate:
+      type: object
+      properties:
+        iso:
+          type: string
+          description: ISO 8601 date string.
+          example: '2024-12-25'
+        datetime:
+          $ref: '#/components/schemas/HolidayDateComponents'
     HolidaysResponse:
       type: object
       properties:
@@ -148,6 +157,15 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/Holiday'
+    HolidayDateComponents:
+      type: object
+      properties:
+        year:
+          type: integer
+        month:
+          type: integer
+        day:
+          type: integer
     Meta:
       type: object
       properties:
@@ -179,15 +197,6 @@ components:
               type: string
             info:
               type: string
-    HolidayDateComponents:
-      type: object
-      properties:
-        year:
-          type: integer
-        month:
-          type: integer
-        day:
-          type: integer
     Holiday:
       type: object
       properties:
@@ -227,15 +236,6 @@ components:
           type: string
           format: uuid
           description: Returned only when uuid=true is requested (premium).
-    HolidayDate:
-      type: object
-      properties:
-        iso:
-          type: string
-          description: ISO 8601 date string.
-          example: '2024-12-25'
-        datetime:
-          $ref: '#/components/schemas/HolidayDateComponents'
   securitySchemes:
     apiKey:
       type: apiKey

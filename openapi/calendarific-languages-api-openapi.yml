@@ -55,15 +55,6 @@ paths:
           description: Rate limit exceeded.
 components:
   schemas:
-    Meta:
-      type: object
-      properties:
-        code:
-          type: integer
-          description: HTTP-style status code echoed in the body.
-          example: 200
-      required:
-      - code
     LanguagesResponse:
       type: object
       properties:
@@ -76,6 +67,15 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/Language'
+    Meta:
+      type: object
+      properties:
+        code:
+          type: integer
+          description: HTTP-style status code echoed in the body.
+          example: 200
+      required:
+      - code
     Language:
       type: object
       properties:
