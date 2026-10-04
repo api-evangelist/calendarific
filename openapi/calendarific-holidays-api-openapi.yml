@@ -136,15 +136,15 @@ paths:
           description: Service unavailable.
 components:
   schemas:
-    HolidayDate:
+    Meta:
       type: object
       properties:
-        iso:
-          type: string
-          description: ISO 8601 date string.
-          example: '2024-12-25'
-        datetime:
-          $ref: '#/components/schemas/HolidayDateComponents'
+        code:
+          type: integer
+          description: HTTP-style status code echoed in the body.
+          example: 200
+      required:
+      - code
     HolidaysResponse:
       type: object
       properties:
@@ -157,46 +157,6 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/Holiday'
-    HolidayDateComponents:
-      type: object
-      properties:
-        year:
-          type: integer
-        month:
-          type: integer
-        day:
-          type: integer
-    Meta:
-      type: object
-      properties:
-        code:
-          type: integer
-          description: HTTP-style status code echoed in the body.
-          example: 200
-      required:
-      - code
-    HolidayCountry:
-      type: object
-      properties:
-        id:
-          type: string
-          description: ISO-3166 alpha-2 country code (lowercase).
-          example: us
-        name:
-          type: string
-          example: United States
-    Error:
-      type: object
-      properties:
-        meta:
-          $ref: '#/components/schemas/Meta'
-        error:
-          type: object
-          properties:
-            type:
-              type: string
-            info:
-              type: string
     Holiday:
       type: object
       properties:
@@ -236,6 +196,46 @@ components:
           type: string
           format: uuid
           description: Returned only when uuid=true is requested (premium).
+    HolidayCountry:
+      type: object
+      properties:
+        id:
+          type: string
+          description: ISO-3166 alpha-2 country code (lowercase).
+          example: us
+        name:
+          type: string
+          example: United States
+    HolidayDateComponents:
+      type: object
+      properties:
+        year:
+          type: integer
+        month:
+          type: integer
+        day:
+          type: integer
+    HolidayDate:
+      type: object
+      properties:
+        iso:
+          type: string
+          description: ISO 8601 date string.
+          example: '2024-12-25'
+        datetime:
+          $ref: '#/components/schemas/HolidayDateComponents'
+    Error:
+      type: object
+      properties:
+        meta:
+          $ref: '#/components/schemas/Meta'
+        error:
+          type: object
+          properties:
+            type:
+              type: string
+            info:
+              type: string
   securitySchemes:
     apiKey:
       type: apiKey

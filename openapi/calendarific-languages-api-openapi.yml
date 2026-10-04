@@ -55,6 +55,15 @@ paths:
           description: Rate limit exceeded.
 components:
   schemas:
+    Language:
+      type: object
+      properties:
+        name:
+          type: string
+          example: English
+        iso-639:
+          type: string
+          example: en
     LanguagesResponse:
       type: object
       properties:
@@ -76,15 +85,6 @@ components:
           example: 200
       required:
       - code
-    Language:
-      type: object
-      properties:
-        name:
-          type: string
-          example: English
-        iso-639:
-          type: string
-          example: en
   securitySchemes:
     apiKey:
       type: apiKey
