@@ -34,7 +34,7 @@ description: >-
 url: https://calendarific.com/
 specificationVersion: '0.23'
 created: '2026-05-28'
-modified: '2026-05-29'
+modified: '2026-10-06'
 x-source: public-apis/public-apis
 x-category: Calendar
 x-tier: 3
@@ -163,6 +163,8 @@ apis:
   - type: RateLimits
     url: rate-limits/calendarific-rate-limits.yml
 common:
+  - url: https://calendarific.com/news
+    type: Blog
   - type: PostmanWorkspace
     url: https://www.postman.com/kinlaneapi/calendarific/overview
   - type: AgenticAccess
