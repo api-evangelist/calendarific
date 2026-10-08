@@ -163,6 +163,8 @@ apis:
   - type: RateLimits
     url: rate-limits/calendarific-rate-limits.yml
 common:
+  - type: FinOps
+    url: finops/calendarific-finops.yml
   - url: https://calendarific.com/news
     type: Blog
   - type: PostmanWorkspace
