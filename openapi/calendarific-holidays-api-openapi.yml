@@ -157,6 +157,25 @@ components:
               type: array
               items:
                 $ref: '#/components/schemas/Holiday'
+    HolidayDateComponents:
+      type: object
+      properties:
+        year:
+          type: integer
+        month:
+          type: integer
+        day:
+          type: integer
+    HolidayCountry:
+      type: object
+      properties:
+        id:
+          type: string
+          description: ISO-3166 alpha-2 country code (lowercase).
+          example: us
+        name:
+          type: string
+          example: United States
     Holiday:
       type: object
       properties:
@@ -196,25 +215,6 @@ components:
           type: string
           format: uuid
           description: Returned only when uuid=true is requested (premium).
-    HolidayCountry:
-      type: object
-      properties:
-        id:
-          type: string
-          description: ISO-3166 alpha-2 country code (lowercase).
-          example: us
-        name:
-          type: string
-          example: United States
-    HolidayDateComponents:
-      type: object
-      properties:
-        year:
-          type: integer
-        month:
-          type: integer
-        day:
-          type: integer
     HolidayDate:
       type: object
       properties:
