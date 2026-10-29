@@ -1,4 +1,4 @@
-# Calendarific (calendarific)
+# Calendarific
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,87 +66,171 @@
 
 Worldwide public holidays REST API covering 230+ countries. Calendarific provides national, local, religious, and observance holiday data with localization across many ISO-639 languages. Used for ecommerce scheduling, HR systems, travel planning, payroll, and global operations.
 
-**APIs.json:** [https://calendarific.com/](https://calendarific.com/)
+**Areas:** Calendar · Public APIs · Holidays · Worldwide · Localization
 
-## Tags
+## Calendarific on APIs.io
 
-- Calendar
-- Public APIs
-- Holidays
-- Worldwide
-- Localization
+Everything profiled for Calendarific is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/calendarific/](https://apis.io/providers/calendarific/)** — or go straight to one of the APIs or properties below.
 
-## Timestamps
+### APIs (3)
 
-- **Created:** 2026-05-28
-- **Modified:** 2026-05-29
+- [Calendarific Countries API](https://apis.io/apis/calendarific/calendarific-countries-api/) — List supported countries and their ISO codes.
+- [Calendarific Holidays API](https://apis.io/apis/calendarific/calendarific-holidays-api/) — Retrieve holiday data for any country and year.
+- [Calendarific Languages API](https://apis.io/apis/calendarific/calendarific-languages-api/) — List supported languages and their ISO codes.
 
-## APIs
+### Published properties
 
-### Calendarific Holiday API
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-REST API returning worldwide public holidays for any of 230+ countries and any year through 2049. Supports filtering by month, day, sub-region (ISO-3166-2), holiday type, and language.
+#### Agentic access (1)
 
-- **Human URL:** [https://calendarific.com/api-documentation](https://calendarific.com/api-documentation)
-- **Base URL:** `https://calendarific.com/api/v2`
+Which operations an agent can call, which act, and which need a human in the loop.
 
-#### Tags
+- [Calendarific Agentic Access](https://apis.io/agentic-access/calendarific/calendarific-agentic-access/)
 
-- Calendar
-- Holidays
-- Worldwide
+#### JSON Schema (3)
 
-#### Properties
+The data models the API reads and writes.
 
-- [Documentation](https://calendarific.com/api-documentation)
-- [API Reference](https://calendarific.com/api-documentation)
-- [OpenAPI](openapi/calendarific-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/calendarific.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/calendarific.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/calendarific-holiday-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/calendarific-country-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/calendarific-language-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Structure](json-structure/calendarific-holiday-structure.json)
-- [JSON Structure](json-structure/calendarific-country-structure.json)
-- [JSON Structure](json-structure/calendarific-language-structure.json)
-- [JSON-LD](json-ld/calendarific-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Example](examples/calendarific-list-holidays-example.json)
-- [Example](examples/calendarific-list-countries-example.json)
-- [Example](examples/calendarific-list-languages-example.json)
-- [Authentication](https://calendarific.com/api-documentation)
-- [Rate Limits](rate-limits/calendarific-rate-limits.yml)
+- [Country](https://apis.io/schemas/calendarific/calendarific-country/)
+- [Holiday](https://apis.io/schemas/calendarific/calendarific-holiday/)
+- [Language](https://apis.io/schemas/calendarific/calendarific-language/)
 
-## Common Properties
+#### JSON Structure (3)
+
+Data models expressed in JSON Structure.
+
+- [Calendarific Country Structure](https://apis.io/json-structure/calendarific/calendarific-country-structure/)
+- [Calendarific Holiday Structure](https://apis.io/json-structure/calendarific/calendarific-holiday-structure/)
+- [Calendarific Language Structure](https://apis.io/json-structure/calendarific/calendarific-language-structure/)
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Calendarific Context](https://apis.io/jsonld/calendarific/calendarific-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Calendarific Vocabulary](https://apis.io/vocabularies/calendarific/calendarific-vocabulary/)
+
+#### Examples (3)
+
+Example requests and responses.
+
+- [Calendarific List Countries Example](https://apis.io/examples/calendarific/calendarific-list-countries-example/)
+- [Calendarific List Holidays Example](https://apis.io/examples/calendarific/calendarific-list-holidays-example/)
+- [Calendarific List Languages Example](https://apis.io/examples/calendarific/calendarific-list-languages-example/)
+
+#### Collections (7)
+
+Postman and Open Collection request collections.
+
+- [Calendarific Holiday API](https://apis.io/collections/calendarific/open-calendarific/)
+- [Calendarific Holiday Countries API](https://apis.io/collections/calendarific/open-calendarific-countries-api/)
+- [Calendarific Holiday Countries Holidays API](https://apis.io/collections/calendarific/open-calendarific-holidays-api/)
+- [Calendarific Holiday Countries Languages API](https://apis.io/collections/calendarific/open-calendarific-languages-api/)
+- [Calendarific Holiday Countries API](https://apis.io/collections/calendarific/postman-calendarific-countries-api/)
+- [Calendarific Holiday Countries Holidays API](https://apis.io/collections/calendarific/postman-calendarific-holidays-api/)
+- [Calendarific Holiday Countries Languages API](https://apis.io/collections/calendarific/postman-calendarific-languages-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Calendarific — jsonschema rules](https://apis.io/rules/calendarific/calendarific-jsonschema-spectral-rules/)
+- [Calendarific API Rules](https://apis.io/rules/calendarific/calendarific-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Calendarific Authentication](https://apis.io/security/calendarific/calendarific-authentication/)
+- [Calendarific Domain Security](https://apis.io/security/calendarific/calendarific-domain-security/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Calendarific Plans Pricing](https://apis.io/plans/calendarific/calendarific-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Calendarific Rate Limits](https://apis.io/rate-limits/calendarific/calendarific-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Calendarific Finops](https://apis.io/finops/calendarific/calendarific-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://calendarific.com/)
-- [Developer Portal](https://calendarific.com/api-documentation)
-- [Sign Up](https://calendarific.com/signup)
-- [Login](https://calendarific.com/login)
 - [Pricing](https://calendarific.com/pricing)
-- [Plans](plans/calendarific-plans-pricing.yml)
-- [Rate Limits](rate-limits/calendarific-rate-limits.yml)
-- [Terms of Service](https://calendarific.com/terms)
-- [Privacy Policy](https://calendarific.com/privacy)
 - [Support](https://calendarific.com/contact)
-- [Contact](https://calendarific.com/contact)
-- [GitHub Organization](https://github.com/calendarific)
-- [SDK](https://github.com/calendarific/python-calendarific)
-- [SDK](https://github.com/calendarific/node-calendarific)
-- [SDK](https://github.com/calendarific/php-calendarific)
-- [SDK](https://github.com/calendarific/ruby-calendarific)
-- [SDK](https://github.com/calendarific/go-calendarific)
-- [SDK](https://github.com/guibranco/calendarific-sdk-dotnet)
-- [SDK](https://github.com/rchaganti/PSCalendarific)
-- [SDK](https://github.com/Bounceapp/elixir-calendarific)
-- [Spectral Rules](rules/calendarific-rules.yml)
-- [Vocabulary](vocabulary/calendarific-vocabulary.yml)
-- [Tools](https://github.com/noalimoy/calendarific-mcp-server)
-- [Features](undefined)
-- [Use Cases](undefined)
-- [Integrations](undefined)
-- [Solutions](undefined)
+- [Blog](https://calendarific.com/news)
+- [Terms of service](https://calendarific.com/terms)
+- [Privacy policy](https://calendarific.com/privacy)
+- [GitHub](https://github.com/calendarific)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 49.2** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 63.9 |
+| Contract governance | 27.3 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 58.3 |
+| Access clarity | 46.1 |
+
+**Agent readiness 28.9** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | na |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | na |
+| Error Semantics | verified |
+| OpenAPI Examples | documented (partial credit) |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | na |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 24.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/calendarific/](https://apis.io/providers/calendarific/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Calendarific: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/calendarific/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
